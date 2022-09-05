@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Result Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  {% if rows is none %}
+    <meta http-equiv="refresh" content="10" />
+  {% endif %}
+</head>
+
+<body>
+  <div class="table-comments">
+   <div class="header">
+       {% if result is not none %}
+            <h4>{{result[0]}}</h4>
+       {% endif %}
+   </div>
+      <table class="table table-striped" cellspacing="0" style="width:100%">
+        <thead>
+            <tr>
+                <th scope="col"><b>Commenter Name</b></th>
+                <th scope="col"><b>Comment</b></th>
+             </tr>
+        </thead>
+        <tbody>
+
+            {% if result is not none and result[1] is not none%}
+            {% for records in result[1] %}
+            <tr>
+                {% for name,comment in records.items() %}
+                    <td>{{name}}</td>
+                    <td>{{comment}}</td>
+                {% endfor %}
+            {% endfor %}
+            {% endif %}
+        </tbody>
+      </table>
+   </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Result Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  {% if rows is none %}
+    <meta http-equiv="refresh" content="10" />
+  {% endif %}
+</head>
+
+<body>
+  <div class="table-users">
+   <div class="header">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <b>Search results</b>
+            </li>
+        </ul>
+        </nav>
+
+   </div>
+      <table class="table table-striped" cellspacing="0" style="width:100%">
+        <thead>
+            <tr>
+                <th scope="col"><b>Thumbnail</b></th>
+                <th scope="col"><b>Youtuber Name</b></th>
+                <th scope="col"><b>Video Title</b></th>
+                <th scope="col"><b>Total Likes</b></th>
+                <th scope="col"><b>Total Comments</b></th>
+                <th scope="col"><b>Video Download Link</b></th>
+                <th scope="col"><b>Comments</b></th>
+             </tr>
+        </thead>
+        <tbody>
+
+            {% if rows is not none %}
+            {% for record in rows %}
+            <tr>
+                <td><img src={{record[6]}} width="120" height="60"></td>
+                <td>{{record[0]}}</td>
+                <td>{{record[3]}}</td>
+                <td>{{record[4]}}</td>
+                <td>{{record[5]}}</td>
+                <td><a href={{record[7]}}>Click to download video</a></td>
+                {% set url = '/expand/' + record[-1] %}
+                <td><a href={{url}}>Click to see Comments</a></td>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+      </table>
+   </div>
+</body>
+</html>
