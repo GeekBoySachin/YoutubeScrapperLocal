@@ -9,9 +9,9 @@ from botocore.exceptions import ClientError
 
 
 class VideoHandler:
-    def __init__(self, url, resolution="low", download_path=os.getcwd()+"\\videos"):
+    def __init__(self, url, resolution="low", download_path=os.path.join(os.getcwd(), "videos")):
         """
-        Definition: __init__(url, resolution="low", download_path=os.getcwd()+"\\videos")
+        Definition: __init__(url, resolution="low", download_path=os.path.join(os.getcwd(),"videos"))
         :param url:video url :str
         :param resolution: low | high :str
         :param download_path: path for saving video :str

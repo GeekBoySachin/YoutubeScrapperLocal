@@ -1,6 +1,10 @@
 {
     "win32_chromedriver_104.0.5112.79_for_104.0.5112": {
-        "timestamp": "05/09/2022",
-        "binary_path": "E:\\iNeuron Data science\\Ineuron Python project\\YoutubeScrapperTask\\YoutubeDataScrapper\\drivers\\drivers\\chromedriver\\win32\\104.0.5112.79\\chromedriver.exe"
+        "timestamp": "06/09/2022",
+        "binary_path": "E:\\iNeuron Data science\\Ineuron Python project\\YoutubeScrapperTask\\YoutubeDataScrapperLocal\\drivers\\drivers\\chromedriver\\win32\\104.0.5112.79\\chromedriver.exe"
+    },
+    "win32_chromedriver_105.0.5195.52_for_105.0.5195": {
+        "timestamp": "12/09/2022",
+        "binary_path": "E:\\iNeuron Data science\\Ineuron Python project\\YoutubeScrapperTask\\YoutubeDataScrapperLocal\\drivers\\drivers\\chromedriver\\win32\\105.0.5195.52\\chromedriver.exe"
     }
 }

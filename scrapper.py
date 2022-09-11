@@ -380,8 +380,9 @@ class Scrapper:
         no_of_comments = self.get_loaded_comments()
         if no_of_comments is not None:
             video_obj.set_no_of_comments(no_of_comments)
-        # video_download_link = self.download_upload_video_s3bucket(link, video_title)
-        # video_obj.set_video_download_link(video_download_link)
+        # Comment below two lines to disable video upload and download from Amazon S3 bucket
+        video_download_link = self.download_upload_video_s3bucket(link, video_title)
+        video_obj.set_video_download_link(video_download_link)
         thumbnail_link = self.find_thumbnail_link(link)
         if thumbnail_link is not None:
             video_obj.set_thumbnail_link(thumbnail_link)

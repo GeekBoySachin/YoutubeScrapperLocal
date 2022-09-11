@@ -3,10 +3,10 @@ import os
 
 class Credentials:
     def __init__(self):
-        self.sql_host = os.getenv("SQL_HOST")
-        self.sql_user = os.getenv("SQL_USER")
-        self.sql_pass = os.getenv("SQL_PASSWORD")
-        self.mongo_uri = os.getenv("MONGO_URI")
+        self.sql_host = os.getenv("SQL_HOST")    # set environment variable - localhost
+        self.sql_user = os.getenv("SQL_USER")   # set environment variable - your mysql username
+        self.sql_pass = os.getenv("SQL_PASSWORD")   # set environment variable - your mysql password
+        self.mongo_uri = os.getenv("MONGO_URI") # set environment variable - mongodb://127.0.0.1:27017
 
     def get_sql_host(self):
         return self.sql_host
